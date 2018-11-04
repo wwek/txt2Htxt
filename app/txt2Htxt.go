@@ -8,13 +8,17 @@ import (
 	"encoding/hex"
 	"fmt"
 	"os"
+	"path/filepath"
 	"strings"
 )
 
 func Txt2Htxt(htype string, hfiles []string) {
 	for _, v := range hfiles {
 		sfileStr := v
-		tfileStr := htype + "_" + v
+		sext := filepath.Ext(v)
+		spath,sfname := filepath.Split(v)
+		sfname = strings.TrimSuffix(sfname,sext)
+		tfileStr := spath + sfname + "_" + htype  + sext
 		sfile, err := os.OpenFile(sfileStr,os.O_RDONLY, 0600)
 		if err != nil {
 			fmt.Println(err)
