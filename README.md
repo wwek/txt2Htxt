@@ -17,7 +17,7 @@ txt2Htxt把文本内容进行哈希加密,用于在朋友圈、今日头条等�
 13888888888
 17699999999
 ```
-通过 SHA256 进行“加密”转换后文件为sha256_tels.txt 结果信息为
+通过 SHA256 进行“加密”转换后文件为tels_sha256.txt 结果信息为
 ```
 6811fc76f7cd9e19b64d0c7116df16ee82606c8647a83e4fff20b7578081843e
 b13851cdc20c38167ece5194488bb7c24b0f23b7d0fdf201d41e7afd4078edc5
@@ -29,8 +29,16 @@ b13851cdc20c38167ece5194488bb7c24b0f23b7d0fdf201d41e7afd4078edc5
 ![img](docs/img/pyq.png)
 
 ## 快速安装使用
+* [Windows系统下载](https://github.com/wwek/txt2Htxt/releases/download/v0.1/txt2Htxt-v0.1-windows-amd64.exe)
+* [Linux系统下载](https://github.com/wwek/txt2Htxt/releases/download/v0.1/txt2Htxt-v0.1-linux-amd64)
+* [OSX苹果系统下载](https://github.com/wwek/txt2Htxt/releases/download/v0.1/txt2Htxt-v0.1-darwin-amd64)
 
-
+Windows为例
+```
+txt2Htxt-v0.1-windows-amd64.exe -t sha256 tels.txt tels1.txt
+# 转换成功:tels_sha256.txt
+# 转换成功:tels1_sha256.txt
+```
 
 ## 编译安装(开发者)
 确保Golang版本≥1.11.1
@@ -43,8 +51,8 @@ b13851cdc20c38167ece5194488bb7c24b0f23b7d0fdf201d41e7afd4078edc5
 
 go run main.go -t sha256 tels.txt tels1.txt
 
-# 转换成功:sha256_tels.txt
-# 转换成功:sha256_tels1.txt
+# 转换成功:tels_sha256.txt
+# 转换成功:tels1_sha256.txt
 
 ```
 
